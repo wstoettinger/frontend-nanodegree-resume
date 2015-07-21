@@ -10,9 +10,9 @@ var bio = {
         twitter : "@wo_sto",
         location : "Vienna, Austria"
     },
-    welcomeMessage : "Create yourself :)",
+    welcomeMessage : "This is the super secret page of Wolfi the Super Ninja",
     skills : ["unknown"],
-    biopic : "images/me.jpg"
+    biopic : "images/ninja.png"
     // display function added later since functions shouldn't be part of pure JSON
 };
 
@@ -61,10 +61,10 @@ var projects = {
             description : "too lazy to write something here",
             images : ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
         }, {
-            title : "And another dummy",
-            dates : "01.07.2015 - now",
-            description : "too lazy to write something here",
-            images : ["images/197x148.gif", "images/197x148.gif"]
+            title : "Code Ninja rocking around xD",
+            dates : "21.07.2015",
+            description : "from androidify.com",
+            images : ["images/code-ninja.gif"]
         }
     ]
     // display function added later since functions shouldn't be part of pure JSON
@@ -84,7 +84,7 @@ bio.display = function () {
         DOMcontacts.append(HTMLcontactGeneric.replace("%contact%", property).replace("%data%", bio.contacts[property]));
       }
     }
-    
+
     DOMheader.append(HTMLbioPic.replace("%data%", bio.biopic));
     DOMheader.append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 
