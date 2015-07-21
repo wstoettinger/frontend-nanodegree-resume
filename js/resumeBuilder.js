@@ -74,9 +74,9 @@ var projects = {
 // ### BIO
 //
 bio.display = function () {
-    var DOMheader = $("#header");
-    DOMheader.prepend(HTMLheaderRole.replace("%data%", bio.role));
-    DOMheader.prepend(HTMLheaderName.replace("%data%", bio.name));
+    
+    $("#nameDiv").append(HTMLheaderName.replace("%data%", bio.name));
+    $("#nameDiv").append(HTMLheaderRole.replace("%data%", bio.role));
 
     var DOMcontacts = $("#topContacts");
     for (var property in bio.contacts) {
@@ -85,6 +85,7 @@ bio.display = function () {
       }
     }
 
+    var DOMheader = $("#header");
     DOMheader.append(HTMLbioPic.replace("%data%", bio.biopic));
     DOMheader.append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
 

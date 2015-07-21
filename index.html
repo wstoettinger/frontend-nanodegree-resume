@@ -1,105 +1,97 @@
 <!DOCTYPE html>
-<head>
-  <!-- This tells the browser how to read the document. -->
-  <meta charset="utf-8">
-  
-  <!-- Tells the browser what the title of this page should be. -->
-  <title>Wolfgang Stöttinger - Resume</title>
+<html>
+  <head>
+    <!-- This tells the browser how to read the document. -->
+    <meta charset="utf-8">
+    
+    <!-- Tells the browser what the title of this page should be. -->
+    <title>Wolfgang Stöttinger - Super Ninja Resume</title>
+    
+    <!-- Include JQery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- END Include JQery -->
+    
+    <!-- Include Bootstrap - source: http://getbootstrap.com/ -->
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- End Include Bootstrap -->
+    
+    <!-- Include Google Web Fonts -->
+      <link href="http://fonts.googleapis.com/css?family=Oxygen:400,300%7CRoboto:100" rel="stylesheet">
+    <!-- END Include Google Web Fonts -->
 
-  <!-- Load the page styles. -->
-  <link href="css/style.css" rel="stylesheet">
-  <!-- Import JQuery-->
-  <script src="js/jQuery.js"></script>
-  <!-- More on helper.js in the class -->
-  <script src="js/helper.js"></script>
-  <!-- Google Maps API -->
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <!-- Load the page styles. -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- More on helper.js in the class -->
+    <script src="js/helper.js"></script>
+    <!-- Google Maps API -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-  <div id="main">
-    <!--
-    Everything from here to the <script> tag below is the skeleton of your
-    website. Your code will add information to each of the sections of the
-    resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
-    -->
-    <div id="header" class="center-content clear-fix">
-      <ul id="topContacts" class="flex-box"></ul>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="main">
+      <!-- Navbar Header -->
+      <header class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <i class="fa fa-bars"></i>
+            </button>
+            <div id="nameDiv"></div>
+          </div>
+          <nav class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#anchorContact">Contact</a></li>
+              <li><a href="#anchorWork">Work Experience</a></li>
+              <li><a href="#anchorProjects">Projects</a></li>
+              <li><a href="#anchorEducation">Education</a></li>
+              <li><a href="#anchorMap">Map</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="header" class="center-content clear-fix">
+              <a class="anchor" id="anchorContact"></a>
+              <ul id="topContacts" class="flex-box"></ul>
+            </div>
+            <div style="clear: both;"></div>
+            <div id="workExperience" class="gray">
+              <a class="anchor" id="anchorWork"></a>
+              <h2>Work Experience</h2>
+            </div>
+            <div id="projects">
+              <a class="anchor" id="anchorProjects"></a>
+              <h2>Projects</h2>
+            </div>
+            <div id="education" class="gray">
+              <a class="anchor" id="anchorEducation"></a>
+              <h2>Education</h2>
+            </div>
+            <div id="map-div">
+              <a class="anchor" id="anchorMap"></a>
+              <h2>Where I've Lived and Worked</h2>
+            </div>
+            <div id="lets-connect" class="dark-gray">
+              <h2 class="orange center-text">Let's Connect</h2>
+                <ul id="footerContacts" class="flex-box">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div style="clear: both;"></div>
-    <div id="workExperience" class="gray">
-      <h2>Work Experience</h2>
-    </div>
-    <div id="projects">
-      <h2>Projects</h2>
-    </div>
-    <div id="education" class="gray">
-      <h2>Education</h2>
-    </div>
-    <div id="map-div">
-      <h2>Where I've Lived and Worked</h2>
-    </div>
-    <div id="lets-connect" class="dark-gray">
-      <h2 class="orange center-text">Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
-  </div>
-
-  <!--
-  The next line tells the browser where to download the JavaScript file you'll be
-  writing. In resumeBuilder.js, you'll be writing code that builds the resume
-  dynamically when this website, index.html, is opened.
-  -->
-  <script src="js/resumeBuilder.js"></script>
-
-
-  <!--
-  These scripts are written in JavaScript. You'll be breaking them down as part of
-  a quiz. Essentially, the next few lines are checking to see if you have not
-  changed each section of the resume. If you have not made any changes to a section
-  of the resume, then that part of the resume does not show up. More on this in the
-  course.
-  -->
-
-  <script type="text/javascript">
-    // Notice how all of a sudden there's JavaScript inside this HTML
-    // document? You can write JavaScript between <script> tags. At the end of your
-    // JavaScript, don't forget the closing script tag with the slash (/).
-
-
-    // Also, this is a JavaScript style comment. You can comment in JavaScript with:
-
-    //   two slashes for all following characters on a single line, or
-
-    /*
-        an opening and closing set of slash asterisks for block comments.
-    */
-
-
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
-    }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
-    }
-    if(document.getElementById('map') === null) {
-      document.getElementById('map-div').style.display = 'none';
-    }
-  </script>
-</body>
+    <script src="js/resumeBuilder.js"></script>
+  </body>
 </html>
